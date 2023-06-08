@@ -1,0 +1,61 @@
+@charset "UTF-8";
+@import "./common.scss";
+
+@font-face {
+  font-family: "Pretendard-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+    format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:wght@700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;700;900&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  color: $color1;
+  font-family: "Pretendard-Regular";
+  font-size: $fs3;
+  box-sizing: border-box;
+}
+html {
+  position: relative;
+  width: 100%;
+  min-width: 100%;
+  min-height: 100%;
+  height: 100%;
+  line-height: 1.15;
+  font-size: 62.5%;
+  font-weight: 400;
+  cursor: none;
+}
+body {
+  position: relative;
+  overflow-x: hidden;
+  width: $ioo;
+  background-color: $color1;
+}
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: $color1;
+}
+a:hover {
+  cursor: none;
+}
+img {
+  vertical-align: top;
+}
+main {
+  margin: $m;
+}
+button {
+  display: block;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: 0 0;
+}

@@ -1,0 +1,23 @@
+제이쿼리 섹션 offset 탑 포지션 fixed
+
+
+.act{
+ position:fixed !important;
+ top:0px;left:0px;
+ width:100%;
+}
+
+$(function(){
+
+ const sec_top = $('section').offset().top;
+
+ $(window).scroll(function(){
+ 
+  if(sec_top==0){
+    $('main section').eq(n).addClass(act);
+  }  
+
+ });
+
+
+})

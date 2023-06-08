@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* @import url("https://fonts.googleapis.com/css?family=Raleway:900&display=swap");
+      
+      body {
+        margin: 0px;
+      }
+
+      #container {
+        position: absolute;
+        margin: auto;
+        width: 100vw;
+        height: 80pt;
+        top: 0;
+        bottom: 0;
+
+        filter: url(#threshold) blur(0.6px);
+      }
+
+      #text1,
+      #text2 {
+        position: absolute;
+        width: 100%;
+        display: inline-block;
+
+        font-family: "Raleway", sans-serif;
+        font-size: 80pt;
+
+        text-align: center;
+
+        user-select: none;
+      } */
+    </style>
+    <link rel="stylesheet" href="./css/test.css" />
+    <script
+      src="https://code.jquery.com/jquery-2.2.4.js"
+      integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+      crossorigin="anonymous"
+    ></script>
+    <script src="./script/intro_text.js" defer></script>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        ;alWEDAP;SDKIPODSDA
+        <li class="active"><a href="">First</a></li>
+        <li><a href="">Second</a></li>
+        <li><a href="">Third</a></li>
+      </ul>
+    </nav>
+    <div id="container">
+      <div id="monitor">
+        <div id="monitorscreen">
+          <span id="text1"></span>
+          <span id="text2"></span>
+        </div>
+        <svg id="filters">
+          <defs>
+            <filter id="threshold">
+              <feColorMatrix
+                in="SourceGraphic"
+                type="matrix"
+                values="1 0 0 0 0
+                        0 1 0 0 0
+                        0 0 1 0 0
+                        0 0 0 255 -140"
+              />
+            </filter>
+          </defs>
+        </svg>
+      </div>
+    </div>
+  </body>
+  <script>
+    var nav = $("nav");
+    var line = $("<div />").addClass("line");
+
+    line.appendTo(nav);
+
+    var active = nav.find(".active");
+    var pos = 0;
+    var wid = 0;
+
+    if (active.length) {
+      pos = active.position().left;
+      wid = active.width();
+      line.css({
+        left: pos,
+        width: wid,
+      });
+    }
+
+    nav.find("ul li a").click(function (e) {
+      e.preventDefault();
+      if (!$(this).parent().hasClass("active") && !nav.hasClass("animate")) {
+        nav.addClass("animate");
+
+        var _this = $(this);
+
+        nav.find("ul li").removeClass("active");
+
+        var position = _this.parent().position();
+        var width = _this.parent().width();
+
+        if (position.left >= pos) {
+          line.animate(
+            {
+              width: position.left - pos + width,
+            },
+            300,
+            function () {
+              line.animate(
+                {
+                  width: width,
+                  left: position.left,
+                },
+                150,
+                function () {
+                  nav.removeClass("animate");
+                }
+              );
+              _this.parent().addClass("active");
+            }
+          );
+        } else {
+          line.animate(
+            {
+              left: position.left,
+              width: pos - position.left + wid,
+            },
+            300,
+            function () {
+              line.animate(
+                {
+                  width: width,
+                },
+                150,
+                function () {
+                  nav.removeClass("animate");
+                }
+              );
+              _this.parent().addClass("active");
+            }
+          );
+        }
+
+        pos = position.left;
+        wid = width;
+      }
+    });
+  </script>
+</html>

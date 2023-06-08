@@ -1,0 +1,65 @@
+@charset "UTF-8";
+//mixin
+// Tablet
+@mixin res--tablet {
+  @media screen and (min-width: #{$tablet}) {
+    @content;
+  }
+}
+
+// Mobile
+@mixin res--mobile {
+  @media screen and (max-width: #{$mobile}) {
+    @content;
+  }
+}
+@mixin title($ts) {
+  font-family: Kanit;
+  font-weight: bold;
+  font-size: ($ts);
+}
+
+@mixin center($t) {
+  position: absolute;
+  top: ($t);
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin left {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+@mixin w_btn($bc) {
+  border: 1px solid ($bc);
+}
+// 변수
+// 기본컬러
+$color1: #fff;
+$color2: #000;
+$color3: #333;
+// 타이틀 사이즈
+$t1: 10rem;
+$t2: 8rem;
+$t3: 6rem;
+
+//일반폰트 사이즈
+$fs1: 4rem;
+$fs2: 3rem;
+$fs3: 2rem;
+$fs4: 1.6rem;
+
+// Break Point
+$tablet: 768px;
+$mobile: 540px;
+
+//마진
+$m: 0 auto;
+// 넓이
+$w: 1080px;
+//높이
+$h: 100vh;
+//100%
+$ioo: 100%;
+$e: 33.33%;
