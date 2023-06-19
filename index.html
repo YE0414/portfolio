@@ -13,6 +13,8 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
+    <!-- 부트스트랩아이콘 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <!-- jquery -->
     <script
       src="https://code.jquery.com/jquery-2.2.4.js"
@@ -22,6 +24,8 @@
     <!-- 프리픽스 -->
     <script src="./script/prefixfree.min.js"></script>
     <!-- scipt -->
+    <!-- 쿠키 -->
+    <script src="./script/jquery.cookie.js" defer></script>
     <!-- 스크롤 트리거 -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
@@ -31,7 +35,7 @@
   </head>
   <body>
     <div class="cursor"></div>
-    <div class="top"><a href="" title="맨 위로">top</a></div>
+    <div class="top animate__animated"><a href="#" title="맨 위로">top</a></div>
     <!-- 헤더 -->
     <header class="header">
       <h1 class="logo">
@@ -83,7 +87,10 @@
       </section>
       <!-- PR -->
       <section class="about">
-        <p style="position: absolute">안녕하세요!</p>
+        <div class="about__tbox">
+        <p class="about__txt">안녕하세요!<br />모두가 편리하게 이용할 수 있는 사이트 제작을 목표로 하는 웹퍼블리셔 나영은입니다.<br />
+        꾸준한 호기심과 자기 발전으로 목표에 다가가기 위해 노력하겠습니다.</p>
+      </div>
         <img src="./images/intro2.jpg" alt="인트로이미지" class="about__img" />
       </section>
       <!-- 작업물 -->
@@ -186,27 +193,26 @@
         <!-- 작업물01 -->
         <article class="work">
           <div class="work__content">
-            <img
+            <!-- <img
               src="./images/ag_logo.png"
               alt="엔제리너스로고"
               class="work__logo"
-            />
+            /> -->
             <div class="work__txt-box">
-              <h4 class="work__title">ANGELINUS</h4>
+              <h4 class="work__title">SORRY!</h4>
 
               <p class="work__text">
-                er ganske enkelt fyldtekst fra print- og typografiindustrien.
-                Lorem Ipsum har været standard fyldtekst siden 1500-tallet.
+                아직 준비중이에요!
               </p>
-              <div class="work__btn-box">
+              <!-- <div class="work__btn-box">
                 <a href="" class="work__btn" target="_blank">website</a>
                 <a href="" class="work__btn" target="_blank">view more</a>
-              </div>
+              </div> -->
             </div>
           </div>
         </article>
         <!-- 작업물02 -->
-        <article class="work">
+        <!-- <article class="work">
           <div class="work__content">
             <div class="work__txt-box">
               <h4 class="work__title">Shinhan<br />Financial group</h4>
@@ -222,8 +228,8 @@
             <img src="./images/sh_logo.png" alt="신한로고" class="work__logo" />
           </div>
         </article>
-        <!-- 작업물03 -->
-        <article class="work">
+        <-- 작업물03 -->
+        <!-- <article class="work">
           <div class="work__content">
             <img
               src="./images/mj_logo.png"
@@ -242,9 +248,9 @@
               </div>
             </div>
           </div>
-        </article>
+        </article> -->
         <!-- 작업물04 -->
-        <article class="work">
+        <!-- <article class="work">
           <div class="work__content">
             <div class="work__txt-box">
               <h4 class="work__title">MARKET Kurly</h4>
@@ -263,13 +269,14 @@
               class="work__logo"
             />
           </div>
-        </article>
+        </article> -->
       </section>
       <!-- 연락 -->
       <section class="contact">
         <h3 class="contact__title">contact</h3>
-        <p class="contact__text"></p>
-        <p class="contact__email"></p>
+        <p class="contact__text">연락은 <span class="contact__text--highlight">여기</span>로 주세요<i class="bi bi-arrow-down"></i></p>
+        <a href="mailto:yena55074@gmail.com" title="이메일보내기" class="contact__email animate__animated">yena55074@gmail.com</a>
+        <p class="contact__text">감사합니다!</p>
       </section>
     </main>
     <!-- 푸터 -->

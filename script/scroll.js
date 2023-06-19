@@ -30,7 +30,7 @@ $(function () {
         trigger: wk,
         start: "100% 100%",
         end: "100% 50%",
-        markers: true,
+        // markers: true,
         scrub: true,
       },
     });
@@ -38,14 +38,14 @@ $(function () {
   const wts = gsap.utils.toArray(".work__title");
   wts.forEach((wt) => {
     gsap.to(wt, {
-      transform: "translateY(0px)",
+      transform: "translateX(0px)",
       opacity: 1,
-      duration: 1,
+      duration: 2,
       scrollTrigger: {
         trigger: wt,
         start: "100% 100%",
         end: "100% 50%",
-        markers: true,
+        // markers: true,
         scrub: true,
       },
     });
@@ -60,7 +60,7 @@ $(function () {
         trigger: wx,
         start: "100% 100%",
         end: "100% 50%",
-        markers: true,
+        // markers: true,
         scrub: true,
       },
     });
@@ -74,9 +74,73 @@ $(function () {
         trigger: wl,
         start: "100% 100%",
         end: "100% 50%",
-        markers: true,
+        // markers: true,
         scrub: true,
       },
     });
   });
+  $(".contact__email").mouseover(function(){
+    $(".contact__text--highlight").css("color", "yellow");
+    $(".contact__email").addClass('animate__swing');
+  });
+  $(".contact__email").mouseout(function(){
+    $(".contact__email")  .removeClass('animate__swing');
+    $(".contact__text--highlight").css("color", "white");
+  });
+  $(".top").mouseover(function(){
+    $(".top").addClass('animate__bounce');
+  });
+  $(".top").mouseout(function(){
+    $(".top").removeClass('animate__bounce');
+  });
+  let modal = `
+  <div class="modal">
+      <div class="modal__banner">
+        <h3>Oops!</h3>
+        <p class="modal__txt">
+        아직 모바일 버전이 준비되지 않았어요! 빠른 시일 내에 작업하도록 하겠습니다.
+        </p>
+        <p class="modal__cbox">
+          <input type="checkbox" id="modal__ch">
+          <label for="modal__ch">일주일간 창 보지 않기</label>
+          <input type="button" value="닫기" class="modal__close">
+        </p>
+      </div>
+    </div>`;
+    $('body').append(modal);
+    $('.modal>.modal__banner>p>.modal__close').click(function(){
+      $('.modal').hide();
+    });
+  });
+// 쿠키만들기
+$(function() {
+  if($.cookie('popup')=='none'){
+      $('.modal').hide();
+  }
+
+function closePop() {
+  let ch = $('#modal__ch');
+  if(ch.is(':checked')) {
+    alert('체크박스');
+      $.cookie('popup', 'none', {expires:7, path:'/'});
+  }
+  $('.modal').hide();
+}
+
+$('.modal>.modal__banner>p>label').click(function(){
+  $.cookie('popup', 'none', {expires:7, path:'/'});
+
+$('.modal a').click(function(){
+  $('.modal').fadeOut();
+})
+
+});
+
+$('.modal>.modal__banner>p>label').click(function(){
+  closePop();
+})
+
+$('.modal a').click(function(){
+  closePop();
+});
 });
